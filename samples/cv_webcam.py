@@ -1,0 +1,18 @@
+import cv2
+
+cap = cv2.VideoCapture(1)
+while(cap.isOpened()):
+      
+    while True:
+          
+        ret, img = cap.read()
+
+        print(img.shape)
+        cv2.imshow('img', img)
+        if cv2.waitKey(30) & 0xff == ord('q'):
+            break
+              
+    cap.release()
+    cv2.destroyAllWindows()
+else:
+    print("Alert ! Camera disconnected")
